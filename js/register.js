@@ -15,20 +15,24 @@ function register() {
 
     var dataEmail = {
         Name : 'email',
-        Value : ''+$('#email').val()
+        Value : ''+$('input.email').val()
     };
 
-    var dataPhoneNumber = {
+/*    var dataPhoneNumber = {
         Name : 'phone_number',
-        Value : '212-111-2222'
-    };
+        Value : '+12121112222'
+    };*/
+    
     var attributeEmail = new AWSCognito.CognitoIdentityServiceProvider.CognitoUserAttribute(dataEmail);
-    var attributePhoneNumber = new AWSCognito.CognitoIdentityServiceProvider.CognitoUserAttribute(dataPhoneNumber);
+    //var attributePhoneNumber = new AWSCognito.CognitoIdentityServiceProvider.CognitoUserAttribute(dataPhoneNumber);
 
     attributeList.push(attributeEmail);
-    attributeList.push(attributePhoneNumber);
+    //attributeList.push(attributePhoneNumber);
+
+    console.log(attributeList);
 
     var emailToUserName = "user-" + (Math.floor((Math.random() * 10000000) + 1));
+    console.log(emailToUserName);
 
     userPool.signUp(emailToUserName, 'Temporary123', attributeList, null, function(err, result){
         if (err) {
@@ -37,7 +41,7 @@ function register() {
         }
         cognitoUser = result.user;
         console.log('user name is ' + cognitoUser.getUsername());
-        alert("Thanks for registering with us");
-        $('#registerForm').submit();
+        $('div#alert-thankyou').show();
+        $('input.email').val()='';
     });
 }
