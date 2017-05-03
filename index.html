@@ -34,11 +34,8 @@
       }
       body {
         background-color: #222222;
-        background-image: url('new-york-city-wallpaper-light.jpg');
-        background-size: 100%;
-        background-position: top;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
+        background: url('new-york-city-wallpaper-light.jpg') no-repeat center center fixed;
+        background-size: cover;
       }
       div.logo-container {
         padding: 30px;
@@ -48,17 +45,22 @@
       div.content-container {
         padding-top: 20px;
         padding-bottom: 40px;
-        position: absolute;
         border-radius: 10px;
         color: #999;
-        width: 50%;
         background-color: rgba(0,0,0,0.25);
-        top: 25%;
-        left: 25%;
         text-align: center;
-        display: table-cell;
         vertical-align: middle;
-        min-width: 400px;
+        width: 600px;
+        height: 300px;
+        min-width: 500px;
+        max-width: 600px;
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        margin: auto;
       }
       div.content-container .heading {
         text-align: center;
@@ -84,14 +86,15 @@
 
     <div class="logo-container"><img src="white background logo.png" width="160">crafted with <span style="color: #C00; font-style: normal;">&hearts;</span> in NYC</div>
     <div class="alert alert-success" role="alert" style="display: none;" id="alert-thankyou">Thank you for registering with us. You will hear from us soon. </div>
+    
     <div class="content-container">
       <div class="heading">Mobile workforces that work</div>
       <br>Are you a business looking to expand your delivery operations? <br>
-      Are you an individual interested in helping with this? <br>
+      Are you a delivery worker interested in greater choice and transparency in your work? <br>
       <br>
-      If you answered yes to either question, then welcome to Bikky! <br>
+      If you answered yes to either, then welcome to Bikky! <br>
       <br>
-      We're launching soon to be the first to join our community. 
+      We're launching soon so be the first to join our community. 
       <br>
       <br>
       <br>
